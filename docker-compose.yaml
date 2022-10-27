@@ -1,0 +1,15 @@
+version: '3.3'
+services: 
+  rstudio:
+    image: tmlts/r-tidyverse-h2o:latest
+    hostname: rstudio
+    container_name: rstudio
+    privileged: true
+    environment:
+      USER: guest
+      PASSWORD: guest
+    volumes:
+      - ./.docker:/home/guest/r-docker tmlts/r-tidyverse-h2o
+      - ./.docker/rstudio:/home/guest/Dados
+    ports:
+      - 8787:8787
